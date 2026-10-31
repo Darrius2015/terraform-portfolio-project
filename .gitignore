@@ -1,0 +1,30 @@
+# Terraform working directory
+**/.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+*.tfstate.lock.info
+
+# Terraform variables and plans
+*.tfvars
+*.tfvars.json
+*.tfplan
+crash.log
+crash.*.log
+
+# Environment files and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Next.js generated files
+**/node_modules/
+**/.next/
+**/out/
+**/.vercel/
+
+# macOS
+.DS_Store
