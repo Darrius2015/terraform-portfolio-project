@@ -1,6 +1,6 @@
 ## Deploying a Static Next.js Website on AWS Using Terraform
 
-##Project Overview
+## Project Overview
 
 This project demonstrates how I used Terraform to provision AWS infrastructure and deploy a static Next.js website using Amazon S3 and Amazon CloudFront.
 
@@ -8,7 +8,7 @@ The project was completed as part of my Cloud Engineer Academy training to devel
 
 I successfully deployed the website, accessed it through a CloudFront URL and subsequently destroyed the infrastructure using Terraform.
 
-##1. The Problem
+## 1. The Problem
 
 Deploying cloud infrastructure manually through the AWS Management Console can become repetitive and difficult to maintain.
 
@@ -16,7 +16,7 @@ When infrastructure needs to be recreated, manually configuring each resource in
 
 The objective of this project was to explore how Infrastructure as Code could make deploying a static website more repeatable and manageable.
 
-##2. What I Built
+## 2. What I Built
 
 I deployed a static Next.js website using the following technologies:
 
@@ -47,7 +47,7 @@ The website files were stored in a private S3 bucket rather than being made publ
 
 CloudFront acted as the public entry point, retrieving the files from S3 using Origin Access Control.
 
-##3. Technical Decisions
+## 3. Technical Decisions
 
 Why Terraform?
 
@@ -75,7 +75,7 @@ The bucket policy permitted CloudFront to retrieve website objects while S3 Bloc
 
 This helped me understand how AWS services can communicate securely without exposing the underlying storage directly to the public.
 
-##4. Challenges and Troubleshooting
+## 4. Challenges and Troubleshooting
 
 One challenge occurred when I initially attempted to access the website through its CloudFront domain.
 
@@ -85,7 +85,7 @@ After allowing time for the distribution and DNS availability, I retried the URL
 
 This reinforced the importance of verifying deployments and understanding that cloud services may take time to become accessible.
 
-##5. Results
+## 5. Results
 
 The project was successfully completed.
 
@@ -127,7 +127,7 @@ Prerequisites
 * Terraform installed
 * Node.js and npm installed
 
-##1. Build the Next.js Website
+## 1. Build the Next.js Website
 
 From the project root:
 
@@ -137,24 +137,24 @@ npm run build
 
 The static export configuration generates the website files in the out/ directory.
 
-##2. Initialise Terraform
+## 2. Initialise Terraform
 
 cd ../terraform
 terraform init
 
-##3. Review the Infrastructure
+## 3. Review the Infrastructure
 
 terraform fmt
 terraform validate
 terraform plan
 
-##4. Deploy the Infrastructure
+## 4. Deploy the Infrastructure
 
 terraform apply
 
 Review the proposed changes and confirm the deployment.
 
-##5. Upload the Website Files
+## 5. Upload the Website Files
 
 From the Terraform directory:
 
@@ -162,13 +162,13 @@ aws s3 sync ../nextjs-blog/out/ s3://YOUR_BUCKET_NAME/ --region eu-west-2
 
 Replace YOUR_BUCKET_NAME with the S3 bucket name created by Terraform.
 
-##6. Retrieve the CloudFront Domain
+## 6. Retrieve the CloudFront Domain
 
 terraform output cloudfront_url
 
 Open the resulting domain in a browser using HTTPS.
 
-##7. Destroy the Infrastructure
+## 7. Destroy the Infrastructure
 
 Once testing is complete, first remove the uploaded website objects:
 
