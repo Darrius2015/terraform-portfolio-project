@@ -33,20 +33,6 @@ I deployed a static Next.js website using the following technologies:
 
 Architecture
 
-                  Website Visitor
-                         |
-                         | HTTPS
-                         v
-                  Amazon CloudFront
-                         |
-                         | Origin Access Control
-                         v
-                   Private S3 Bucket
-                         |
-                         v
-                 Static Next.js Files
-          Terraform manages AWS infrastructure
-
 The website files were stored in a private S3 bucket rather than being made publicly accessible.
 
 CloudFront acted as the public entry point, retrieving the files from S3 using Origin Access Control.
