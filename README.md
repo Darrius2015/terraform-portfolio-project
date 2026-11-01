@@ -27,6 +27,10 @@ I deployed a static Next.js website using the following technologies:
 * AWS CLI: Uploaded the generated website files to Amazon S3.
 * Next.js: Generated the static website files.
 
+### Architecture Diagram
+
+![AWS Architecture Diagram](Terraform-aws-architecture.png)
+
 Architecture
 
                   Website Visitor
