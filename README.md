@@ -31,7 +31,7 @@ I deployed a static Next.js website using the following technologies:
 
 ![AWS Architecture Diagram](Terraform-aws-architecture.png)
 
-Architecture
+ #### How the Architecture Works
 
 The website files were stored in a private S3 bucket rather than being made publicly accessible.
 
